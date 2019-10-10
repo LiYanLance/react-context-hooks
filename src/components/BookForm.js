@@ -1,25 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class BookForm extends Component {
+const BookForm = () => {
 
-  state = {
-    title: ""
+  const addNewBook = (event) => {
+    event.preventDefault()
   }
   
-  addNewBook = (event) => {
-    event.preventDefault()
-    this.setState({title: ""})
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.addNewBook}>
-        <input type="text" placeholder="book title" value={this.state.title}
-               onChange={event => this.setState({title: event.target.value})} required/>
-        <input type="submit" value="add book"/>
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={addNewBook}>
+      <input type="text" placeholder="book title" value={"this.state.title"}
+             onChange={event => "this.setState({title: event.target.value})"} required/>
+      <input type="submit" value="add book"/>
+    </form>
+  )
 }
+
 
 export default BookForm;
